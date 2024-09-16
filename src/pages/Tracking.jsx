@@ -745,12 +745,12 @@ const TrackingPage = () => {
                 });
 
                 // Calculate routes for all bookings
-                bookingsData.forEach(booking => {
-                    calculateRoute(
-                        { lat: parseFloat(booking.ride.startPoint.lat), lng: parseFloat(booking.ride.startPoint.lng) },
-                        { lat: parseFloat(booking.ride.endPoint.lat), lng: parseFloat(booking.ride.endPoint.lng) }
-                    );
-                });
+                // bookingsData.forEach(booking => {
+                //     calculateRoute(
+                //         { lat: parseFloat(booking.ride.startPoint.lat), lng: parseFloat(booking.ride.startPoint.lng) },
+                //         { lat: parseFloat(booking.ride.endPoint.lat), lng: parseFloat(booking.ride.endPoint.lng) }
+                //     );
+                // });
             } catch (error) {
                 Swal.fire('Error', 'Failed to fetch tracking information.', 'error');
             }
@@ -759,23 +759,23 @@ const TrackingPage = () => {
         fetchAllBookings();
     }, []);
 
-    const calculateRoute = (start, end) => {
-        const directionsService = new window.google.maps.DirectionsService();
-        directionsService.route(
-            {
-                origin: start,
-                destination: end,
-                travelMode: window.google.maps.TravelMode.DRIVING
-            },
-            (result, status) => {
-                if (status === window.google.maps.DirectionsStatus.OK) {
-                    setDirectionsResponses(prev => [...prev, result]);
-                } else {
-                    Swal.fire('Error', 'Failed to calculate route.', 'error');
-                }
-            }
-        );
-    };
+    // const calculateRoute = (start, end) => {
+    //     const directionsService = new window.google.maps.DirectionsService();
+    //     directionsService.route(
+    //         {
+    //             origin: start,
+    //             destination: end,
+    //             travelMode: window.google.maps.TravelMode.DRIVING
+    //         },
+    //         (result, status) => {
+    //             if (status === window.google.maps.DirectionsStatus.OK) {
+    //                 setDirectionsResponses(prev => [...prev, result]);
+    //             } else {
+    //                 Swal.fire('Error', 'Failed to calculate route.', 'error');
+    //             }
+    //         }
+    //     );
+    // };
 
     const handleBackButtonClick = () => {
         navigate('/userDashboard');  // Navigate back to UserDashboard

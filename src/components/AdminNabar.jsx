@@ -56,6 +56,9 @@ const AdminNavbar = () => {
                     <li className="nav-item ml-6">
                         <Link to="/adminpayment" className="block px-4 py-2 text-white hover:bg-gray-600 no-underline">Payment Verification</Link>
                     </li>
+                    <li className="nav-item ml-6">
+                        <Link to="/adminrating" className="block px-4 py-2 text-white hover:bg-gray-600 no-underline">Ratings</Link>
+                    </li>
                     <li>
                         <button
                             onClick={handleLogout}

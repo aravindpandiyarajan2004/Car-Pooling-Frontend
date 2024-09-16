@@ -24,6 +24,7 @@ import TrackingPage from './pages/Tracking';
 import PaymentTable from './pages/AdminPayment';
 import VehicleSelector from './pages/SelectVehicle';
 import BookingRequest from './pages/BookingRequest';
+import AdminReviews from './pages/AdminRating';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/adminpayment" element={<PaymentTable />} />
           <Route path="/selectvehicle" element={<VehicleSelector />} />
           <Route path="/bookingrequest" element={<BookingRequest />} />
+          <Route path="/adminrating" element={<AdminReviews />} />
           <Route path="*" element={<NotFound/>} />
          </Routes>
        

@@ -3314,7 +3314,7 @@ const PaymentPage = () => {
   const [cardType, setCardType] = useState('');
   const [pdfUrl, setPdfUrl] = useState('');
   const navigate = useNavigate();
-  const [paymentId, setPaymentId] = useState(null);
+//   const [paymentId, setPaymentId] = useState(null);
   const userId = sessionStorage.getItem("userId");
 
   useEffect(() => {
@@ -3337,7 +3337,7 @@ const PaymentPage = () => {
     };
 
     fetchPaymentDetails();
-  }, [userId,paymentId]);
+  }, [userId]);
 
   const generateTransactionId = () => {
     return 'TXN' + Math.floor(Math.random() * 1000000);
