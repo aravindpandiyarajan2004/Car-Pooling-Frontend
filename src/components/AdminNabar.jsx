@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSignOutAlt } from 'react-icons/fa';
+import { useAuth } from '../components/AuthContext'; 
 import Swal from 'sweetalert2';
 
 const AdminNavbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const toggleNav = () => setIsNavOpen(!isNavOpen);
     const navigate = useNavigate();
+    const { logout } = useAuth();
 
     const handleLogout = () => {
         Swal.fire({
@@ -15,6 +17,7 @@ const AdminNavbar = () => {
             icon: 'success',
             confirmButtonText: 'OK',
         }).then(() => {
+            logout();
             sessionStorage.clear();
             navigate('/adminlogin');
         });
